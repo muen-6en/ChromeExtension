@@ -1,0 +1,81 @@
+#focus-reading-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  pointer-events: none;
+}
+
+#focus-reading-status {
+  position: fixed;
+  bottom: 8px;
+  left: 8px;
+  z-index: 2147483647;
+  padding: 3px 7px;
+  border: 1px solid rgba(23, 37, 84, 0.45);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.62);
+  color: #172554;
+  font: 11px/1.2 sans-serif;
+  pointer-events: none;
+  user-select: none;
+}
+
+#focus-reading-overlay .focus-reading-panel {
+  position: fixed;
+  background: rgba(80, 80, 80, 0.58);
+  backdrop-filter: grayscale(100%);
+  transition: all 80ms ease-out;
+}
+
+#focus-reading-overlay .focus-reading-panel--top,
+#focus-reading-overlay .focus-reading-panel--bottom {
+  left: 0;
+  width: 100vw;
+}
+
+#focus-reading-overlay .focus-reading-panel--left,
+#focus-reading-overlay .focus-reading-panel--right {
+  top: 0;
+  height: 100vh;
+}
+
+#focus-reading-overlay .focus-reading-panel--top {
+  top: 0;
+}
+
+#focus-reading-overlay .focus-reading-frame {
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  box-sizing: border-box;
+  border: 2px solid #172554;
+  pointer-events: none;
+  transition: all 80ms ease-out;
+}
+
+#focus-reading-overlay.focus-reading-paused {
+  display: none;
+}
+
+#focus-reading-overlay.focus-reading-disabled {
+  display: none;
+}
+
+#focus-reading-overlay.focus-reading-no-dim .focus-reading-panel {
+  display: none;
+}
+
+html.focus-reading-line-mode,
+html.focus-reading-line-mode * {
+  cursor: crosshair !important;
+}
+
+html.focus-reading-area-mode,
+html.focus-reading-area-mode * {
+  cursor: cell !important;
+}
+
+html.focus-reading-character-mode,
+html.focus-reading-character-mode * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Ccircle cx='6' cy='6' r='3' fill='%23172554' fill-opacity='.9'/%3E%3C/svg%3E") 6 6, text !important;
+}

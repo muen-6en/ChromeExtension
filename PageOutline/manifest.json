@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Page Outline",
+  "version": "1.0.0",
+  "description": "ページ内の見出しから固定目次を作成します。",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Page Outlineを切り替え"
+  },
+  "commands": {
+    "toggle-page-outline": {
+      "suggested_key": {
+        "default": "Alt+I"
+      },
+      "description": "Page Outlineのオン／オフを切り替える"
+    }
+  }
+}

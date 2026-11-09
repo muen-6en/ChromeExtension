@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Focus Reading",
+  "version": "1.0.0",
+  "description": "マウスを載せた箇所以外の色味を抑えて、読みたい箇所に集中しやすくします。",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file://*/*"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Focus Reading"
+  }
+}
